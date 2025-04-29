@@ -1,0 +1,50 @@
+{
+  "status": {
+      "update_interval": 10,
+      "use_percent": true,
+      "min_interval": 15,
+      "gcode_timeout": 600,
+      "before": {
+          "enable": false,
+          "delay": 0,
+          "execute": []
+      },
+      "after": {
+          "enable": false,
+          "delay": 0,
+          "execute": []
+      }
+},"notifications": {
+        "blacklist": [],
+        "moonraker_throttle": true,
+        "timelapse": true,
+        "m117_notification": {
+            "enable": true,
+            "blacklist": [
+                "/(Rendering (\\||\\/|-|\\\\))/g",
+                "/^.*(Time Left).*$/g"
+            ],
+            "whitelist": []
+        },
+        "temp_target_notification": {
+            "enable": true,
+            "temp_offset": 2,
+            "temp_duration": 5,
+            "delay": 30
+        }
+    },   
+  "connection": {
+        "moonraker_url": "http://127.0.0.1",
+        "moonraker_token": "",
+        "bot_token": "NjAxOTM0NzIwNTQ4MzM5NzUy.GhLD9z.Ag7431XXKsxwQUdikFojyO__IerHa0gNbFzhvY"
+    },
+    "permission": {
+        "controllers": {
+            "users": "369632828025208834"
+        }
+    },
+    "webcam": {
+        "url": "http://192.168.68.82/webcam/?action=snapshot"
+    },
+    "tmp_path": "/tmp/MoonCord"
+}
