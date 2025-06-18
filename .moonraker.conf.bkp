@@ -28,7 +28,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	mainsail
+	octoeverywhere
 
 [update_manager]
 refresh_interval = 168
@@ -76,4 +76,15 @@ origin = https://github.com/TypQxQ/kTAMV.git
 primary_branch = main
 install_script = install.sh
 managed_services = klipper
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/doc/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/doc/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
 
