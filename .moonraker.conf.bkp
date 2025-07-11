@@ -47,12 +47,27 @@ path = ~/mainsail-config
 origin = https://github.com/mainsail-crew/mainsail-config.git
 managed_services = klipper
 
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
+
+[timelapse]
+output_path = ~/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
 [update_manager crowsnest]
 type = git_repo
 path = ~/crowsnest
 origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 install_script = tools/install.sh
+
+[spoolman]
+server = http://192.168.68.82:7912
+sync_rate = 5
 
 [update_manager voron-klipper-extensions]
 type = git_repo
