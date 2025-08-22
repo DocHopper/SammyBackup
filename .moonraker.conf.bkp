@@ -76,22 +76,6 @@ origin = https://github.com/voidtrance/voron-klipper-extensions.git
 install_script = install-extensions.sh
 managed_services = klipper
 
-[update_manager ToolChanger]
-type = git_repo
-path = ~/klipper-toolchanger
-origin = https://github.com/DraftShift/klipper-toolchanger.git
-primary_branch = main
-is_system_service = True
-managed_services = ToolChanger
-
-[update_manager ktamv]]
-type = git_repo
-path = ~/kTAMV
-origin = https://github.com/TypQxQ/kTAMV.git
-primary_branch = main
-install_script = install.sh
-managed_services = klipper
-
 [update_manager octoeverywhere]
 type = git_repo
 channel = beta
