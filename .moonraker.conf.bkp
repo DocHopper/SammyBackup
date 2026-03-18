@@ -22,17 +22,29 @@ trusted_clients =
 	FE80::/10
 	::1/128
 
+[wled prism]
+type = http
+address = 192.168.68.67
+initial_red = 0.5
+initial_green = 0.4
+initial_blue = 0.3
+chain_count = 169
+
 [octoprint_compat]
 
 [history]
 
 [announcements]
 subscriptions = 
-	octoeverywhere
+	mainsail
 
 [update_manager]
 refresh_interval = 168
 enable_auto_refresh = True
+
+[spoolman]
+server = http://192.168.68.82:7912
+sync_rate = 5
 
 [update_manager mainsail]
 type = web
@@ -53,6 +65,8 @@ primary_branch = main
 path = ~/moonraker-timelapse
 origin = https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services = klipper moonraker
+info_tags = 
+	desc
 
 [timelapse]
 output_path = ~/timelapse/
@@ -65,9 +79,11 @@ origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 install_script = tools/install.sh
 
-[spoolman]
-server = http://192.168.68.82:7912
-sync_rate = 5
+[update_manager led_effect]
+type = git_repo
+path = ~/klipper-led_effect
+origin = https://github.com/julianschill/klipper-led_effect.git
+is_system_service = False
 
 [update_manager voron-klipper-extensions]
 type = git_repo
@@ -76,14 +92,11 @@ origin = https://github.com/voidtrance/voron-klipper-extensions.git
 install_script = install-extensions.sh
 managed_services = klipper
 
-[update_manager octoeverywhere]
-type = git_repo
-channel = beta
-path = /home/doc/octoeverywhere
-origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
-env = /home/doc/octoeverywhere-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	octoeverywhere
+[update_manager fluidd]
+path = /home/doc/fluidd
+repo = fluidd-core/fluidd
+channel = stable
+type = web
+persistent_files = 
+	config.json
 
